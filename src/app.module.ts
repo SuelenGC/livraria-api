@@ -1,5 +1,5 @@
-import { LivrosService } from './produtos/livros.service';
-import { LivrosController } from './produtos/livros.controller';
+import { LivrosService } from './livros/livros.service';
+import { LivrosController } from './livros/livros.controller';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
