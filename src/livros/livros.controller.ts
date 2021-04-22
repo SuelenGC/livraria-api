@@ -1,6 +1,6 @@
 import { LivrosService } from './livros.service';
-import { Livro } from './livro.model';
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common"
+import { Livro } from './livro.entity';
 
 
 @Controller('livros')
@@ -8,30 +8,27 @@ export class LivrosController {
   constructor(private livrosService: LivrosService) {}
 
   @Get()
-  list(): Livro[] {
-    return this.livrosService.list();
+  findAll() : Promise<Livro[]> {
+    return this.livrosService.findAll();
   }
 
   @Get(':id')
-  findById(@Param() params) {
-    return this.livrosService.findById(0);
+  findById(@Param() params) : Promise<Livro> {
+    return this.livrosService.findById(params.id);
   }
 
   @Post()
-  create(@Body() livro: Livro) {
-    this.livrosService.create(livro);
-    return livro;
+  create(@Body() livro: Livro) : Promise<Livro> {
+    return this.livrosService.create(livro);
   }
 
   @Put(':id')
-  update(@Param() params, @Body() livro: Livro) : Livro {
-    this.livrosService.update(livro);
-    return livro;
+  update(@Param() params, @Body() livro: Livro) : Promise<Livro> {
+    return this.livrosService.update(params.id, livro);
   }
 
   @Delete(':id')
-  delete(@Param() params) {
-    return this.livrosService.delete(params.id);
+  delete(@Param() params) : Promise<void> {
+    return this.livrosService.remove(params.id);
   }
-
 }

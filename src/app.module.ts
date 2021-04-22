@@ -1,12 +1,16 @@
-import { LivrosService } from './livros/livros.service';
-import { LivrosController } from './livros/livros.controller';
-import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { LivrosModule } from './livros/livros.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, LivrosController],
-  providers: [AppService, LivrosService],
+  imports: [
+    TypeOrmModule.forRoot({
+      autoLoadEntities: true,
+    }), LivrosModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

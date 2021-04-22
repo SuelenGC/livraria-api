@@ -1,4 +1,4 @@
-export class Livro {
+export class LivroOldModel {
   id: number;
   codigo: string;
   nome: string;
