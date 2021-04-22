@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Thsi project is a NodeJS REST API for a Library context. This project uses NestJS for the API, TypeORM for the database integration with MySQL (mysql2), and DotEnv for the environment variables.
 
 ## Installation
 
