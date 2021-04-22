@@ -26,6 +26,8 @@
 
 Thsi project is a NodeJS REST API for a Library context. This project uses NestJS for the API, TypeORM for the database integration with MySQL (mysql2), and DotEnv for the environment variables.
 
+This project was done to complete the [Alura NestJS](https://cursos.alura.com.br/course/nestjs-api-rest-typescript) course.
+
 ## Installation
 
 ```bash
